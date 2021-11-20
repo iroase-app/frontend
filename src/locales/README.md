@@ -4,6 +4,8 @@ Thanks for thinking about translating iroase.
 
 Some things to keep in mind if you are submitting translations:
 
+> The Arabic translation is a machine translation, used to test RTL support. I do not speak Arabic. tl;dr: Arabic needs a real translation.
+
 Rules
 ---
 
