@@ -7,7 +7,7 @@ function localize(): void {
   addMessages('ar', ar);
   init({
     fallbackLocale: 'en',
-    initialLocale: 'ar',
+    initialLocale: getLocaleFromNavigator(),
   });
 }
 
