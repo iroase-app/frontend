@@ -11,12 +11,15 @@ const config = {
       },
       purple: {
         DEFAULT: '#5b4b5c',
+      },
+      dark: {
+        DEFAULT: '#212121',
       }
     },
-  },
-  fontFamily: {
-    display: ['"Space Mono"', '"IBM Plex Mono"', 'monospace'],
-    sans: ['Inter', 'sans-serif'],
+    fontFamily: {
+      display: ['"Space Mono"', '"IBM Plex Mono"', 'monospace'],
+      sans: ['Inter', 'sans-serif'],
+    },
   },
   plugins: [
     require('tailwindcss-rtl'),
