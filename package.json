@@ -11,6 +11,7 @@
     "lint": "eslint --ignore-path .gitignore ."
   },
   "devDependencies": {
+    "@iconify-json/mdi": "^1.0.10",
     "@sveltejs/kit": "next",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
@@ -25,7 +26,8 @@
     "svelte-preprocess": "^4.9.8",
     "tailwindcss": "^2.2.16",
     "tslib": "^2.3.1",
-    "typescript": "^4.4.3"
+    "typescript": "^4.4.3",
+    "unplugin-icons": "^0.12.18"
   },
   "type": "module",
   "dependencies": {

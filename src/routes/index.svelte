@@ -51,7 +51,7 @@
               {$_("landingPage.tagline")}
             </p>
             <a
-              href="./login"
+              href="./app/login"
               in:fly={{ duration: 500, delay: 1200, x: -100 }}
               on:click={() => (loaded = false)}
               class="font-display lg:text-start max-w-xs lg:my-16 text-center lg:text-xl text-pink px-4 py-2 rounded my-4 bg-purple block"
