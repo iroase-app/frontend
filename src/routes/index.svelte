@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { browser } from "$app/env";
   import Flippable from "../components/Cards/Flippable.svelte";
 
@@ -13,6 +13,10 @@
     }
   });
 </script>
+
+<svelte:head>
+  <title>{$_('login.page')}</title>
+</svelte:head>
 
 <div class="h-screen bg-pink">
   <!-- Hero -->

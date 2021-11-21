@@ -6,11 +6,14 @@ const config = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
+      white: '#fff',
       pink: {
         DEFAULT: '#feefeb',
+        darker: '#ddced2'
       },
       purple: {
         DEFAULT: '#5b4b5c',
+        lighter: '#978891',
       },
       dark: {
         DEFAULT: '#212121',

@@ -7,12 +7,12 @@
 <div
   class="bg-pink dark:bg-dark text-purple dark:text-pink fill-current min-h-screen"
 >
-  <nav class="p-8 justify-between flex items-center">
+  <nav class="px-7 py-3 justify-between flex items-center absolute top-0 w-screen">
     <div>
       <Home />
     </div>
     <div>
-      <MdiTranslate class="h-9 w-9 cursor-pointer" />
+      <MdiTranslate class="h-8 w-8 m-2 cursor-pointer" />
     </div>
   </nav>
   <slot />

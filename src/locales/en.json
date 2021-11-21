@@ -1,5 +1,6 @@
 {
   "landingPage": {
+    "page": "iroase",
     "iroase": "iroase.",
     "tagline": "intelligent flashcards.",
     "card": {
@@ -7,6 +8,14 @@
       "back": "iroase."
     },
     "cta": "log in or sign up."
+  },
+  "login": {
+    "page": "iroase • login",
+    "title": "log in",
+    "username": "username",
+    "password": "password",
+    "submit": "log in",
+    "signUp": "no account? sign up here."
   },
   "card": {
     "flip": "tap to flip."
