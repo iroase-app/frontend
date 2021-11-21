@@ -20,7 +20,7 @@
     <p
       in:fly={{ duration: 400, x: -100, delay: 400 }}
       out:fly={{ duration: 400, x: -100 }}
-      class="font-sans h-full text-pink text-2xl flex items-center justify-center text-center p-2"
+      class="font-sans h-full text-pink text-2xl flex items-center justify-center text-center p-4"
     >
       {front}
     </p>
@@ -28,7 +28,7 @@
     <p
       in:fly={{ duration: 400, x: 100, delay: 400 }}
       out:fly={{ duration: 400, x: 100 }}
-      class="font-sans h-full text-pink text-2xl flex items-center justify-center text-center p-2"
+      class="font-sans h-full text-pink text-2xl flex items-center justify-center text-center p-4"
     >
       {back}
     </p>

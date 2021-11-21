@@ -3,9 +3,10 @@
     "iroase": "iroase.",
     "tagline": "intelligent flashcards.",
     "card": {
-      "front": "The best way to remember things",
+      "front": "the best way to remember things",
       "back": "iroase."
-    }
+    },
+    "cta": "log in or sign up."
   },
   "card": {
     "flip": "tap to flip."

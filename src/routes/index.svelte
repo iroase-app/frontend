@@ -26,7 +26,7 @@
           class="lg:w-1/3 lg:ms-32 flex flex-col items-center lg:items-start"
         >
           <svg
-            transition:fly={{ duration: 750, delay: 400, x: -200 }}
+            in:fly={{ duration: 750, delay: 400, x: -200 }}
             viewBox="0 0 138 43"
             xmlns="http://www.w3.org/2000/svg"
             class="w-1/2 max-w-xs lg:w-64"
@@ -39,21 +39,32 @@
 
           <div class="pt-2 w-full justify-start">
             <h1
-              transition:fly={{ duration: 500, delay: 800, x: -100 }}
+              in:fly={{ duration: 500, delay: 800, x: -100 }}
               class="font-display w-full text-2xl lg:text-4xl text-center lg:text-start text-purple"
             >
               {$_("landingPage.iroase")}
             </h1>
             <p
-              transition:fly={{ duration: 500, delay: 1000, x: -100 }}
+              in:fly={{ duration: 500, delay: 1000, x: -100 }}
               class="w-full font-display lg:text-start text-center lg:text-xl text-purple opacity-90"
             >
               {$_("landingPage.tagline")}
             </p>
+            <a
+              href="./login"
+              in:fly={{ duration: 500, delay: 1200, x: -100 }}
+              on:click={() => (loaded = false)}
+              class="font-display lg:text-start lg:w-2/3 lg:my-16 text-center lg:text-xl text-pink px-4 py-2 rounded my-4 bg-purple block"
+            >
+              {$_("landingPage.cta")}
+            </a>
           </div>
         </div>
         <div class="float-end lg:me-64 hidden 2xl:inline-block">
-          <Flippable front={$_('landingPage.card.front')} back={$_('landingPage.card.back')} />
+          <Flippable
+            front={$_("landingPage.card.front")}
+            back={$_("landingPage.card.back")}
+          />
         </div>
       </div>
     {/if}
