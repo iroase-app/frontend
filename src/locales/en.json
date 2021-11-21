@@ -1,6 +1,13 @@
 {
   "landingPage": {
     "iroase": "iroase.",
-    "tagline": "intelligent flashcards."
+    "tagline": "intelligent flashcards.",
+    "card": {
+      "front": "The best way to remember things",
+      "back": "iroase."
+    }
+  },
+  "card": {
+    "flip": "tap to flip."
   }
 }
