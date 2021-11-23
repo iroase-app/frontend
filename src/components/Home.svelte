@@ -4,6 +4,7 @@
 
 <a href="/app">
   <svg
+    class="ps-1 pt-2"
     width="138"
     height="43"
     viewBox="0 0 138 43"

@@ -15,7 +15,7 @@
 </script>
 
 <svelte:head>
-  <title>{$_('login.page')}</title>
+  <title>{$_("login.page")}</title>
 </svelte:head>
 
 <div class="h-screen bg-pink">

@@ -15,7 +15,28 @@
     "username": "username",
     "password": "password",
     "submit": "log in",
-    "signUp": "no account? sign up here."
+    "register": "no account? sign up here."
+  },
+  "register": {
+    "page": "iroase • register",
+    "title": "sign up",
+    "username": "username",
+    "password": "password",
+    "confirm": "confirm password",
+    "submit": "create account",
+    "login": "already have an account? log in here.",
+    "constraints": {
+      "username": {
+        "length": "must be between 3 and 24 characters.",
+        "characters": "must be alphanumeric."
+      },
+      "password": {
+        "length": "must be between 8 and 128 characters.",
+        "quality": "are you sure you want to use that password? it's very inscecure!",
+        "qualityTooltip": "this password is in the top 1000 most common passwords."
+      },
+      "confirm": "the passwords must match."
+    }
   },
   "card": {
     "flip": "tap to flip."
