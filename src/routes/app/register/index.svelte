@@ -21,11 +21,50 @@
     password = "";
     confirm = "";
   });
+  const submit = () => {
+    if (
+      (password !== confirm ||
+        password.length < 8 ||
+        password.length > 128 ||
+        username.length < 3 ||
+        username.length > 24 ||
+        !username.match(/^[A-Za-z0-9]*$/g)) &&
+      fetching === false
+    ) {
+      return;
+    }
+    fetching = true;
+    fetch(getURL("register"), {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username,
+        password,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.error) {
+          error = res.error;
+          fetching = false;
+        } else {
+          localStorage.setItem("session", res.session);
+          window.location.href = "/app";
+        }
+      });
+  };
 </script>
 
 <svelte:head>
   <title>{$_("register.page")}</title>
 </svelte:head>
+<svelte:window
+  on:keyup={(e) => {
+    if (e.key === "Enter") submit();
+  }}
+/>
 
 <div class="flex items-center justify-center h-screen w-full">
   <main class="bg-purple p-4 text-pink rounded-md max-w-sm w-full">
@@ -154,40 +193,7 @@
           )
             ? 'cursor-pointer hover:bg-purple-lighter'
             : 'cursor-not-allowed opacity-10 bg-purple-lighter'}"
-          on:click={() => {
-            if (
-              (password !== confirm ||
-                password.length < 8 ||
-                password.length > 128 ||
-                username.length < 3 ||
-                username.length > 24 ||
-                !username.match(/^[A-Za-z0-9]*$/g)) &&
-              fetching === false
-            ) {
-              return;
-            }
-            fetching = true;
-            fetch(getURL("register"), {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                username,
-                password,
-              }),
-            })
-              .then((res) => res.json())
-              .then((res) => {
-                if (res.error) {
-                  error = res.error;
-                  fetching = false;
-                } else {
-                  localStorage.setItem("session", res.session);
-                  window.location.href = "/app";
-                }
-              });
-          }}
+          on:click={submit}
         >
           {#if fetching}
             <MdiLoading class="animate-spin" />
