@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "license": "BSD-3-Clause",
   "scripts": {
-    "dev": "svelte-kit dev",
+    "dev": "svelte-kit dev -p 3001",
     "build": "svelte-kit build",
-    "preview": "svelte-kit preview",
+    "preview": "svelte-kit preview -p 3001",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "eslint --ignore-path .gitignore .",

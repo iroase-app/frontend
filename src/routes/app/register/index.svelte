@@ -1,15 +1,26 @@
 <script lang="ts">
   import { _ } from "svelte-i18n";
-  import Input from "./../../../components/Input.svelte";
+  import Input from "../../../components/Input.svelte";
   import MdiAccountPlus from "virtual:icons/mdi/account-plus";
   import MdiWarning from "virtual:icons/mdi/warning";
   import MdiLockQuestion from "virtual:icons/mdi/lock-question";
+  import MdiLoading from "virtual:icons/mdi/loading";
   import { fly } from "svelte/transition";
   import badPasswords from "./badPasswords";
+  import getURL from "../../../common/getURL";
+  import { onMount } from "svelte";
 
   let username = "";
   let password = "";
   let confirm = "";
+  let error: false | string = false;
+  let fetching: boolean;
+  onMount(() => {
+    fetching = false;
+    username = "";
+    password = "";
+    confirm = "";
+  });
 </script>
 
 <svelte:head>
@@ -114,21 +125,75 @@
             </div>
           {/if}
         </div>
+        {#if error}
+          <div
+            class="flex items-center"
+            transition:fly={{ duration: 300, y: 50 }}
+          >
+            <MdiWarning class="h-5 w-5 me-2" />
+            <div class="justify-between">
+              <span class="font-sans">{$_(`register.error.${error}`)}</span>
+            </div>
+          </div>
+        {/if}
         <button
           class="border-2 mt-6 w-full flex items-center text-pink rounded p-2 font-display transition-opacity
           {!(
-            password !== confirm ||
-            password.length < 8 ||
-            password.length > 128 ||
-            username.length < 3 ||
-            username.length > 24 ||
-            !username.match(/^[A-Za-z0-9]*$/g)
+            // I know this isn't very DRY. However, Svelte requires
+            // this to be done as it needs the variables directly
+            // in order to dynamically update things.
+            (
+              (password !== confirm ||
+                password.length < 8 ||
+                password.length > 128 ||
+                username.length < 3 ||
+                username.length > 24 ||
+                !username.match(/^[A-Za-z0-9]*$/g)) &&
+              fetching === false
+            )
           )
             ? 'cursor-pointer hover:bg-purple-lighter'
             : 'cursor-not-allowed opacity-10 bg-purple-lighter'}"
-          on:click={() => alert(username)}
+          on:click={() => {
+            if (
+              (password !== confirm ||
+                password.length < 8 ||
+                password.length > 128 ||
+                username.length < 3 ||
+                username.length > 24 ||
+                !username.match(/^[A-Za-z0-9]*$/g)) &&
+              fetching === false
+            ) {
+              return;
+            }
+            fetching = true;
+            fetch(getURL("register"), {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                username,
+                password,
+              }),
+            })
+              .then((res) => res.json())
+              .then((res) => {
+                if (res.error) {
+                  error = res.error;
+                  fetching = false;
+                } else {
+                  localStorage.setItem("session", res.session);
+                  window.location.href = "/app";
+                }
+              });
+          }}
         >
-          <MdiAccountPlus class="reverse" />
+          {#if fetching}
+            <MdiLoading class="animate-spin" />
+          {:else}
+            <MdiAccountPlus class="reverse" />
+          {/if}
           <span class="ms-2">{$_("register.submit")}</span>
         </button>
 

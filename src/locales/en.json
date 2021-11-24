@@ -36,6 +36,9 @@
         "qualityTooltip": "this password is in the top 1000 most common passwords."
       },
       "confirm": "the passwords must match."
+    },
+    "error": {
+      "usernameCollision": "that username is already taken."
     }
   },
   "card": {
