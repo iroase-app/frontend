@@ -15,7 +15,15 @@
     "username": "username",
     "password": "password",
     "submit": "log in",
-    "register": "no account? sign up here."
+    "register": "no account? sign up here.",
+    "error": {
+      "usernameTooShort": "your username is at least 3 characters long.",
+      "passwordTooShort": "your password is at least 8 characters long.",
+      "usernameTooLong": "your username is at most 24 characters long.",
+      "passwordTooLong": "your password is at most 128 characters long.",
+      "illegalCharacters": "your username is alphanumeric.",
+      "wrongCredentials": "wrong username or password."
+    }
   },
   "register": {
     "page": "iroase • register",
