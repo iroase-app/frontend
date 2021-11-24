@@ -51,6 +51,7 @@
           fetching = false;
         } else {
           localStorage.setItem("session", res.session);
+          localStorage.setItem("username", res.username);
           window.location.href = "/app";
         }
       });
