@@ -1,4 +1,5 @@
 import preprocess from "svelte-preprocess";
+import legacy  from '@vitejs/plugin-legacy';
 import Icons from "unplugin-icons/vite";
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -18,7 +19,8 @@ const config = {
       plugins: [
         Icons({
           compiler: "svelte",
-        })
+        }),
+        legacy()
       ]
     }
   },
