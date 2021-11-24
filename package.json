@@ -8,23 +8,27 @@
     "preview": "svelte-kit preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "eslint --ignore-path .gitignore ."
+    "lint": "eslint --ignore-path .gitignore .",
+    "test": "jest"
   },
   "devDependencies": {
     "@iconify-json/mdi": "^1.0.10",
     "@sveltejs/kit": "next",
+    "@types/jest": "^27.0.3",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
     "autoprefixer": "^10.3.7",
     "cssnano": "^5.0.8",
     "eslint": "^7.32.0",
     "eslint-plugin-svelte3": "^3.2.1",
+    "jest": "^27.3.1",
     "postcss": "^8.3.9",
     "postcss-load-config": "^3.1.0",
     "svelte": "^3.42.6",
     "svelte-check": "^2.2.6",
     "svelte-preprocess": "^4.9.8",
     "tailwindcss": "^2.2.16",
+    "ts-jest": "^27.0.7",
     "tslib": "^2.3.1",
     "typescript": "^4.4.3",
     "unplugin-icons": "^0.12.18"
