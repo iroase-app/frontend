@@ -32,7 +32,7 @@
     "password": "contraseña",
     "confirm": "confirmar contraseña",
     "submit": "crear cuenta.",
-    "login": "ya tiene una cuenta? inicie sesión aquí.",
+    "login": "¿ya tiene una cuenta? inicie sesión aquí.",
     "constraints": {
       "username": {
         "length": "debe tener entre 3 y 24 caracteres.",
