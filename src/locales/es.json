@@ -1,0 +1,55 @@
+{
+  "landingPage": {
+    "page": "iroase",
+    "iroase": "iroase.",
+    "tagline": "tarjetas didácticas inteligentes.",
+    "card": {
+      "front": "la mejor manera de recordar cosas",
+      "back": "iroase."
+    },
+    "cta": "inicie sesión o regístrese."
+  },
+  "login": {
+    "page": "iroase • acceso",
+    "title": "iniciar sesión",
+    "username": "nombre de usuario",
+    "password": "contraseña",
+    "submit": "iniciar sesión",
+    "register": "¿no tiene una cuenta? regístrese aquí.",
+    "error": {
+      "usernameTooShort": "su nombre de usuario tiene al menos 3 caracteres.",
+      "passwordTooShort": "su contraseña tiene al menos 8 caracteres.",
+      "usernameTooLong": "su nombre de usuario tiene como máximo 24 caracteres.",
+      "passwordTooLong": "su contraseña tiene un máximo de 128 caracteres.",
+      "illegalCharacters": "su nombre de usuario es alfanumérico.",
+      "wrongCredentials": "nombre de usuario o contraseña equivocado."
+    }
+  },
+  "register": {
+    "page": "iroase • registro",
+    "title": "registrarse",
+    "username": "nombre de usuario",
+    "password": "contraseña",
+    "confirm": "confirmar contraseña",
+    "submit": "crear cuenta.",
+    "login": "ya tiene una cuenta? inicie sesión aquí.",
+    "constraints": {
+      "username": {
+        "length": "debe tener entre 3 y 24 caracteres.",
+        "characters": "deben ser alfanuméricos."
+      },
+      "password": {
+        "length": "debe tener entre 8 y 128 caracteres.",
+        "quality": "¿está segurx que quiere usar esta contraseña? ¡es muy insegura!",
+        "qualityTooltip": "esta contraseña se encuentra entre las 1000 contraseñas más comunes."
+      },
+      "confirm": "las contraseñas deben coincidir."
+    },
+    "error": {
+      "usernameCollision": "este nombre de usuario ya está en uso."
+    }
+  },
+  "card": {
+    "flip": "toque aquí para voltear."
+  }
+}
