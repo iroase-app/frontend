@@ -6,6 +6,8 @@
   import MdiWarning from "virtual:icons/mdi/warning";
   import { fly } from "svelte/transition";
   import getURL from "../../common/getURL";
+  import { browser } from "$app/env";
+import { onMount } from "svelte";
 
   let username = "";
   let password = "";
@@ -38,11 +40,17 @@
         }
       });
   };
+  if (browser && ('session' in localStorage)) {
+    onMount(() => {
+      window.location.href = "/app";
+    });
+  }
 </script>
 
 <svelte:head>
   <title>{$_("login.page")}</title>
 </svelte:head>
+
 <svelte:window
   on:keyup={(e) => {
     if (e.key === "Enter") submit();

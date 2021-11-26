@@ -9,6 +9,7 @@
   import badPasswords from "./badPasswords";
   import getURL from "../../../common/getURL";
   import { onMount } from "svelte";
+import { browser } from "$app/env";
 
   let username = "";
   let password = "";
@@ -55,6 +56,9 @@
         }
       });
   };
+  if (browser && 'session' in localStorage) {
+    window.location.href = "/app";
+  }
 </script>
 
 <svelte:head>

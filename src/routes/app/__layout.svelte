@@ -1,13 +1,39 @@
 <script lang="ts">
   import Home from "../../components/Home.svelte";
   import MdiTranslate from "virtual:icons/mdi/translate";
-  // TODO: Showing account + settings icons when signed in
+  import { browser } from "$app/env";
+  import user from "./stores";
+  import getURL from "../../common/getURL";
+  import { onMount } from "svelte";
+
+  onMount(async () => {
+    if (
+      !("session" in localStorage) &&
+      browser &&
+      location.pathname !== "/app/login" &&
+      location.pathname !== "/app/register"
+    ) {
+      window.location.href = "/app/login";
+    } else {
+      $user.session = localStorage.getItem("session");
+      await fetch(getURL("app", "session"), {
+        headers: { Authorization: `Bearer ${$user.session}` },
+      })
+        .then((res) => res.json())
+        .then((res) => {
+          $user.username = res.username;
+          $user.isModerator = res.isModerator;
+        });
+    }
+  });
 </script>
 
 <div
   class="bg-pink dark:bg-dark text-purple dark:text-pink fill-current min-h-screen"
 >
-  <nav class="px-7 py-3 justify-between flex items-center absolute top-0 w-screen">
+  <nav
+    class="px-7 py-3 justify-between flex items-center absolute top-0 w-screen"
+  >
     <div>
       <Home />
     </div>
