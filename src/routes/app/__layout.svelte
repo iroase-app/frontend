@@ -29,10 +29,10 @@
 </script>
 
 <div
-  class="bg-pink dark:bg-dark text-purple dark:text-pink fill-current min-h-screen"
+  class="bg-pink dark:bg-dark text-purple dark:text-pink fill-current min-h-screen block"
 >
   <nav
-    class="px-7 py-3 justify-between flex items-center absolute top-0 w-screen"
+    class="px-7 py-3 justify-between flex items-center w-screen"
   >
     <div>
       <Home />

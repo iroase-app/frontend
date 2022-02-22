@@ -56,7 +56,7 @@ import { onMount } from "svelte";
     if (e.key === "Enter") submit();
   }}
 />
-<div class="flex items-center justify-center h-screen w-full">
+<div class="flex items-center justify-center w-full">
   <main class="bg-purple p-4 text-pink rounded-md max-w-sm w-full">
     <h2 class="font-display text-2xl mb-4">{$_("login.title")}</h2>
     <Input
