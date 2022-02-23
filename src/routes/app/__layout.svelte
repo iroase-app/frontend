@@ -63,7 +63,7 @@
     </div>
     <div class="flex">
       <MdiTranslate class="h-8 w-8 m-2 cursor-pointer" />
-      {#if $user}
+      {#if $user.session}
         <MdiAccountCircle
           class="h-8 w-8 m-2 cursor-pointer"
           on:click={() => console.log("a")}
