@@ -7,7 +7,7 @@
   import { fly } from "svelte/transition";
   import getURL from "../../common/getURL";
   import { browser } from "$app/env";
-import { onMount } from "svelte";
+  import { onMount } from "svelte";
 
   let username = "";
   let password = "";
@@ -40,7 +40,7 @@ import { onMount } from "svelte";
         }
       });
   };
-  if (browser && ('session' in localStorage)) {
+  if (browser && "session" in localStorage) {
     onMount(() => {
       window.location.href = "/app";
     });
