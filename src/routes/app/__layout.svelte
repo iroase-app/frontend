@@ -1,14 +1,12 @@
 <script lang="ts">
   import Home from "../../components/Home.svelte";
   import MdiTranslate from "virtual:icons/mdi/translate";
-  import MdiAccountCircle from "virtual:icons/mdi/accountCircle";
-  import MdiEmoticonSadOutline from "virtual:icons/mdi/emoticonSadOutline";
   import { browser } from "$app/env";
   import user from "./stores";
   import getURL from "../../common/getURL";
   import { onMount } from "svelte";
   import { _ } from "svelte-i18n";
-  import { fly } from "svelte/transition";
+  import AccountTray from "./AccountTray.svelte";
 
   onMount(async () => {
     if (
@@ -50,10 +48,7 @@
     <div class="flex">
       <MdiTranslate class="h-8 w-8 m-2 cursor-pointer" />
       {#if $user.session}
-        <MdiAccountCircle
-          class="h-8 w-8 m-2 cursor-pointer"
-          on:click={() => console.log("a")}
-        />
+        <AccountTray />
       {/if}
     </div>
   </nav>
