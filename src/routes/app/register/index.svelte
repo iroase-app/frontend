@@ -70,7 +70,7 @@
   }}
 />
 
-<div class="flex items-center justify-center h-screen w-full">
+<div class="flex items-center justify-center">
   <main class="bg-purple p-4 text-pink rounded-md max-w-sm w-full">
     <h2 class="font-display text-2xl mb-4">{$_("register.title")}</h2>
     <div>
