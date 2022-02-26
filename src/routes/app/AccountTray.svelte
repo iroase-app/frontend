@@ -18,7 +18,7 @@ import { _ } from "svelte-i18n";
       class="absolute flex flex-col z-50 border-t-2"
       transition:fly={{ y: -10, duration: 100 }}
     >
-      <button title={$_('app.icons.')} on:click={() => {}} transition:fly={{ y: -60, duration: 150 }}>
+      <button title={$_('app.icons.logout')} on:click={() => {}} transition:fly={{ y: -60, duration: 150 }}>
         <Settings class="h-8 w-8 m-2 cursor-pointer" />
       </button>
       <button
