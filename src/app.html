@@ -3,18 +3,19 @@
 
 <head>
 	<meta charset="utf-8" />
+	<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+	<meta name="viewport" content="width=device-width" />
 	<link rel="icon" href="/favicon.png" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link
 		href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@1&family=Inter&family=Space+Mono:ital@1&display=swap"
 		rel="stylesheet">
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	%svelte.head%
+	%sveltekit.head%
 </head>
 
-<body>
-	<div id="svelte">%svelte.body%</div>
+<body data-sveltekit-preload-data="hover" class="h-full">
+	<div style="display: contents">%sveltekit.body%</div>
 </body>
 
 </html>

@@ -8,10 +8,10 @@ jobs:
     - uses: actions/cache@v2
       with:
         path: '**/node_modules'
-        key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+        key: ${{ runner.os }}-modules-${{ hashFiles('**/pnpm-lock.yaml') }}
     
     - uses: actions/checkout@v2
     - name: Install dependencies
-      run: yarn
+      run: pnpm
     - name: Run tests
       run: yarn test

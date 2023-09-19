@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { browser } from "$app/env";
-  import Flippable from "../components/Cards/Flippable.svelte";
+ import { browser } from "$app/environment";
+  import FlippableCard from "$lib/components/cards/FlippableCard.svelte";
 
   import { onMount } from "svelte";
 
@@ -65,7 +65,7 @@
           </div>
         </div>
         <div class="float-end lg:me-64 hidden 2xl:inline-block">
-          <Flippable
+          <FlippableCard
             front={$_("landingPage.card.front")}
             back={$_("landingPage.card.back")}
           />

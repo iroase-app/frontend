@@ -1,5 +1,6 @@
+/** @type {import('tailwindcss').Config}*/
 const config = {
-  mode: "jit",
+  content: ["./src/**/*.{html,js,svelte,ts}"],
   purge: ["./src/**/*.{html,js,svelte,ts}"],
   darkMode: 'class',
   theme: {
@@ -24,9 +25,7 @@ const config = {
       sans: ['Inter', 'sans-serif'],
     },
   },
-  plugins: [
-    require('tailwindcss-rtl'),
-  ],
 };
 
 module.exports = config;
+

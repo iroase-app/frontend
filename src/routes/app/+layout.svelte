@@ -1,9 +1,9 @@
 <script lang="ts">
-  import Home from "../../components/Home.svelte";
+  import Home from "$lib/components/Home.svelte";
   import MdiTranslate from "virtual:icons/mdi/translate";
-  import { browser } from "$app/env";
-  import user from "./stores";
-  import getURL from "../../common/getURL";
+  import { browser } from "$app/environment";
+  import user from "$lib/stores";
+  import getURL from "$lib/getURL";
   import { onMount } from "svelte";
   import { _ } from "svelte-i18n";
   import AccountTray from "./AccountTray.svelte";
@@ -16,8 +16,8 @@
       location.pathname !== "/app/register"
     ) {
       location.pathname = "/app/login";
-    } else if ("session" in localStorage) {
-      $user.session = localStorage.getItem("session");
+    } else if ("session" in localStorage && $user) {
+      $user.session = localStorage.getItem("session")!;
       await fetch(getURL("app", "session"), {
         headers: { Authorization: `Bearer ${$user.session}` },
       })
@@ -31,8 +31,8 @@
           }
         })
         .then((res) => {
-          $user.username = res.username;
-          $user.isModerator = res.isModerator;
+          $user!.username = res.username;
+          $user!.isModerator = res.isModerator;
         });
     }
   });
@@ -47,7 +47,7 @@
     </div>
     <div class="flex">
       <MdiTranslate class="h-8 w-8 m-2 cursor-pointer" />
-      {#if $user.session}
+      {#if !$user}
         <AccountTray />
       {/if}
     </div>
