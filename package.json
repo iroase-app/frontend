@@ -37,7 +37,6 @@
   "type": "module",
   "dependencies": {
     "svelte-i18n": "^3.3.13",
-    "tailwind-rtl": "^1.0.0",
     "tailwindcss-rtl": "^0.8.0"
   }
 }
