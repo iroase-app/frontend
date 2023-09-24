@@ -1,12 +1,11 @@
 <script lang="ts">
   import { _ } from "svelte-i18n";
-  import Input from "../../components/Input.svelte";
   import MdiAccountArrowRight from "virtual:icons/mdi/account-arrow-right";
   import MdiLoading from "virtual:icons/mdi/loading";
   import MdiWarning from "virtual:icons/mdi/warning";
   import { fly } from "svelte/transition";
-  import getURL from "../../common/getURL";
-  import { browser } from "$app/env";
+  import getURL from "$lib/getURL";
+  import { browser } from "$app/environment";
   import { onMount } from "svelte";
 
   let username = "";
@@ -59,18 +58,22 @@
 <div class="flex items-center justify-center w-full">
   <main class="bg-purple p-4 text-pink rounded-md max-w-sm w-full">
     <h2 class="font-display text-2xl mb-4">{$_("login.title")}</h2>
-    <Input
-      label={$_("login.username")}
+    <label>
+      {$_("login.username")}
+      <input
       id="username"
       bind:value={username}
       type="text"
     />
-    <Input
-      label={$_("login.password")}
-      id="password"
-      bind:value={password}
-      type="password"
-    />
+    </label>
+    <label>
+      {$_("login.password")}
+      <input
+        id="password"
+        bind:value={password}
+        type="password"
+      />
+    </label>
     <button
       class="border-2 mt-6 w-full flex items-center text-pink rounded p-2 font-display transition-opacity
     {username && password && !fetching

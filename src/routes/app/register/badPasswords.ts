@@ -4,7 +4,7 @@
   This file may contain offensive language, so please be careful.
 */
 export default [
-  "  123456",
+  "123456",
   "password",
   "12345678",
   "qwerty",

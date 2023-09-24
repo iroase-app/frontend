@@ -3,11 +3,12 @@
   import Settings from "virtual:icons/mdi/cogOutline";
   import Logout from "virtual:icons/mdi/exitRun";
   import { fly } from "svelte/transition";
-  import user from "./stores";
-  import getURL from "../../common/getURL";
+  import user from "$lib/stores";
+  import getURL from "$lib/getURL";
   import { _ } from "svelte-i18n";
   import { cubicInOut } from "svelte/easing";
   let expanded = false;
+  // TODO: Fix logout
 </script>
 
 <div
@@ -35,6 +36,7 @@
       <button
         title={$_("app.icons.logout")}
         on:click={() => {
+          if (!$user) return;
           fetch(getURL("app", "session"), {
             method: "DELETE",
             headers: { Authorization: `Bearer ${$user.session}` },

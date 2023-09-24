@@ -1,15 +1,14 @@
 <script lang="ts">
   import { _ } from "svelte-i18n";
-  import Input from "../../../components/Input.svelte";
   import MdiAccountPlus from "virtual:icons/mdi/account-plus";
   import MdiWarning from "virtual:icons/mdi/warning";
   import MdiLockQuestion from "virtual:icons/mdi/lock-question";
   import MdiLoading from "virtual:icons/mdi/loading";
   import { fly } from "svelte/transition";
   import badPasswords from "./badPasswords";
-  import getURL from "../../../common/getURL";
+  import getURL from "$lib/getURL";
   import { onMount } from "svelte";
-  import { browser } from "$app/env";
+  import { browser } from "$app/environment";
 
   let username = "";
   let password = "";
@@ -74,12 +73,14 @@
   <main class="bg-purple p-4 text-pink rounded-md max-w-sm w-full">
     <h2 class="font-display text-2xl mb-4">{$_("register.title")}</h2>
     <div>
-      <Input
-        label={$_("register.username")}
-        id="username"
-        bind:value={username}
-        type="text"
-      />
+      <label>
+        {$_("register.username")}
+        <input
+          id="username"
+          bind:value={username}
+          type="text"
+        />
+      </label>
       <div class="my-4">
         {#if (username.length < 3 || username.length > 24) && username.length > 0}
           <div
@@ -109,12 +110,14 @@
       </div>
     </div>
     <div>
-      <Input
-        label={$_("register.password")}
-        id="password"
-        bind:value={password}
-        type="password"
-      />
+      <label>
+        {$_("register.password")}
+        <input
+          id="password"
+          bind:value={password}
+          type="password"
+        />
+      </label>
       <div class="my-4">
         {#if (password.length < 8 || password.length > 128) && password.length > 0}
           <div
@@ -147,12 +150,14 @@
         {/if}
       </div>
       <div>
-        <Input
-          label={$_("register.confirm")}
+        <label>
+          {$_("register.confirm")}
+          <input
           id="confirm"
           bind:value={confirm}
           type="password"
         />
+        </label>
         <div class="my-4">
           {#if confirm !== password && confirm.length > 0}
             <div
