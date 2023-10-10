@@ -46,7 +46,12 @@
       "confirm": "the passwords must match."
     },
     "error": {
-      "usernameCollision": "that username is already taken."
+      "usernameCollision": "that username is already taken.",
+      "confirm": "your passwords don't match.",
+      "usernameLength": "your username must be between 3 and 24 characters long.",
+      "passwordLength": "your password must be between 8 and 128 characters long.",
+      "usernameCharacters": "your username must be alphanumeric.",
+      "internalError": "internal server error. please try again later."
     }
   },
   "card": {

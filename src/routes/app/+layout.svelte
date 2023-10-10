@@ -1,41 +1,20 @@
 <script lang="ts">
   import Home from "$lib/components/Home.svelte";
   import MdiTranslate from "virtual:icons/mdi/translate";
-  import { browser } from "$app/environment";
-  import user from "$lib/stores";
-  import getURL from "$lib/getURL";
-  import { onMount } from "svelte";
   import { _ } from "svelte-i18n";
   import AccountTray from "./AccountTray.svelte";
+  import user, { type User } from "$lib/stores";
 
-  onMount(async () => {
-    if (
-      !("session" in localStorage) &&
-      browser &&
-      location.pathname !== "/app/login" &&
-      location.pathname !== "/app/register"
-    ) {
-      location.pathname = "/app/login";
-    } else if ("session" in localStorage && $user) {
-      $user.session = localStorage.getItem("session")!;
-      await fetch(getURL("app", "session"), {
-        headers: { Authorization: `Bearer ${$user.session}` },
-      })
-        .then((res) => {
-          if (res.status === 401) {
-            localStorage.removeItem("session");
-            $user = null;
-            location.pathname = "/app/login";
-          } else {
-            return res.json();
-          }
-        })
-        .then((res) => {
-          $user!.username = res.username;
-          $user!.isModerator = res.isModerator;
-        });
-    }
-  });
+  import type { LayoutData, LayoutServerData } from "./$types";
+  import getURL from "$lib/getURL";
+  import { browser } from "$app/environment";
+  import { page } from "$app/stores";
+  import { redirect } from "@sveltejs/kit";
+    import { goto } from "$app/navigation";
+
+  export let data: LayoutData;
+
+  console.log(data)
 </script>
 
 <div
@@ -47,7 +26,7 @@
     </div>
     <div class="flex">
       <MdiTranslate class="h-8 w-8 m-2 cursor-pointer" />
-      {#if !$user}
+      {#if $user}
         <AccountTray />
       {/if}
     </div>

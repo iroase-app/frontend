@@ -39,13 +39,11 @@
           if (!$user) return;
           fetch(getURL("app", "session"), {
             method: "DELETE",
-            headers: { Authorization: `Bearer ${$user.session}` },
           })
             .then((res) => {
               if (res.ok) {
                 $user = null;
-                localStorage.removeItem("session");
-                location.pathname = "/app/login";
+                location.pathname = "/app/auth/login";
               } else {
                 alert("Uh, something went wrong. Try again?");
               }

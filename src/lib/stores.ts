@@ -1,8 +1,7 @@
 import { writable } from "svelte/store";
 
-interface User {
+export interface User {
   username: string,
-  session: string,
   isModerator: boolean,
 }
 

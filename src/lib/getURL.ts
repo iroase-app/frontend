@@ -11,5 +11,5 @@ import config from '../config';
  * 
  */
 export default function getURL(...path: string[]): string {
-  return [config.api.url, ...path].join('/');
+  return `${[config.api.url, ...path].join('/')}`;
 }
