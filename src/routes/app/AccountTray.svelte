@@ -16,7 +16,7 @@
     (expanded ? "transition-all shadow-xl" : "")}
 >
   <button
-    title={$_("app.icons.accountTray")}
+    title={$_("app.icon.accountTray")}
     on:click={() => (expanded = !expanded)}
   >
     <MdiAccountCircle class="h-8 w-8 m-2 cursor-pointer" />
@@ -27,14 +27,14 @@
       transition:fly={{ y: -10, duration: 100, easing: cubicInOut }}
     >
       <button
-        title={$_("app.icons.settings")}
+        title={$_("app.icon.settings")}
         on:click={() => {}}
         transition:fly={{ y: -60, duration: 150, easing: cubicInOut }}
       >
         <Settings class="h-8 w-8 m-2 cursor-pointer" />
       </button>
       <button
-        title={$_("app.icons.logout")}
+        title={$_("app.icon.logout")}
         on:click={() => {
           if (!$user) return;
           fetch(getURL("app", "session"), {

@@ -55,14 +55,53 @@
     }
   },
   "card": {
-    "flip": "tap to flip."
+    "flip": "tap to flip.",
+    "aria": {
+      "front": "front of flippable card",
+      "back": "back of flippable card"
+    }
   },
   "app": {
-    "icons": {
+    "icon": {
       "accountTray": "change settings or log out.",
       "settings": "change settings.",
       "translate": "change language.",
       "logout": "log out."
+    },
+    "deckList": {
+      "greeting": {
+        "0": "hello, {username}.",
+        "1": "hello, {username}.",
+        "2": "hello, {username}.",
+        "3": "hello, {username}.",
+        "4": "good morning, {username}.",
+        "5": "good morning, {username}.",
+        "6": "good morning, {username}.",
+        "7": "good morning, {username}.",
+        "8": "good morning, {username}.",
+        "9": "good morning, {username}.",
+        "10": "good morning, {username}.",
+        "11": "good morning, {username}.",
+        "12": "good afternoon, {username}.",
+        "13": "good afternoon, {username}.",
+        "14": "good afternoon, {username}.",
+        "15": "good afternoon, {username}.",
+        "16": "good afternoon, {username}.",
+        "17": "good afternoon, {username}.",
+        "18": "good evening, {username}.",
+        "19": "good evening, {username}.",
+        "20": "good evening, {username}.",
+        "21": "good evening, {username}.",
+        "22": "good evening, {username}.",
+        "23": "good evening, {username}."
+      },
+      "error": {
+        "noSession": "you can't view your decks without <a href=\"/app/auth/login\">logging in</a>."
+      },
+      "noDecks": "get started by creating a deck.",
+      "createDeck": "create a deck",
+      "newDeckName": "deck name",
+      "create": "create"
     }
   }
 }

@@ -3,18 +3,14 @@
   import MdiTranslate from "virtual:icons/mdi/translate";
   import { _ } from "svelte-i18n";
   import AccountTray from "./AccountTray.svelte";
-  import user, { type User } from "$lib/stores";
+  import user from "$lib/stores";
 
-  import type { LayoutData, LayoutServerData } from "./$types";
-  import getURL from "$lib/getURL";
-  import { browser } from "$app/environment";
-  import { page } from "$app/stores";
-  import { redirect } from "@sveltejs/kit";
-    import { goto } from "$app/navigation";
-
+  import type { LayoutData } from "./$types";
+  import { onMount } from "svelte";
   export let data: LayoutData;
-
-  console.log(data)
+  onMount(() => {
+    $user = data.user || null
+  });
 </script>
 
 <div
@@ -26,7 +22,7 @@
     </div>
     <div class="flex">
       <MdiTranslate class="h-8 w-8 m-2 cursor-pointer" />
-      {#if $user}
+      {#if data.user}
         <AccountTray />
       {/if}
     </div>
