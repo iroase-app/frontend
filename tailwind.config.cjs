@@ -25,6 +25,9 @@ const config = {
       sans: ['Inter', 'sans-serif'],
     },
   },
+  plugins: [
+    require('tailwind-scrollbar'),
+  ],
 };
 
 module.exports = config;

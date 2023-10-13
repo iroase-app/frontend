@@ -5,6 +5,6 @@ export const load: PageLoad = async ({ fetch }) => {
   const res = await fetch(getURL("app", "decks"), { credentials: 'include' });
   if (!res.ok) throw error(res.status, (await res.json()).error);
   const deckList = await res.json();
-  console.log(deckList);
+  console.log(deckList)
   return deckList // { decks: [] }
 };
