@@ -102,6 +102,9 @@
       "createDeck": "create a deck",
       "newDeckName": "deck name",
       "create": "create"
+    },
+    "editor": {
+      "createCard": "create a card"
     }
   }
 }
