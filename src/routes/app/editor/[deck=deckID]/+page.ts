@@ -14,11 +14,12 @@ interface Deck {
     name: string;
     public: boolean;
     course: string | null;
+    deck_id: string;
   };
 }
 
 interface Card {
   front: string;
   back: string;
-  card_id: number;
+  card_id: string;
 }

@@ -104,7 +104,12 @@
       "create": "create"
     },
     "editor": {
-      "createCard": "create a card"
+      "editing": "editing {deckName}",
+      "create": "create",
+      "delete": "delete",
+      "error": {
+        "deleteCard": "error deleting card."
+      }
     }
   }
 }
