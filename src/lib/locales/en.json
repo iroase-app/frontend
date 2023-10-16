@@ -110,6 +110,16 @@
       "error": {
         "deleteCard": "error deleting card."
       }
+    },
+    "review": {
+      "done": "all done! check back later for more.",
+      "when": "how confident are you with this card?",
+      "again": "again",
+      "ok": "okay",
+      "good": "good",
+      "great": "great",
+      "veryEasy": "very easy",
+      "show": "show answer"
     }
   }
 }
