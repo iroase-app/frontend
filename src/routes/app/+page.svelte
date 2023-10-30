@@ -14,6 +14,10 @@
   let deckCreationName = "";
 </script>
 
+<svelte:head>
+  <title>iroase</title>
+</svelte:head>
+
 <span class="w-full text-center p-1 pb-0 text-lg font-display block">
   {$_(`app.deckList.greeting.${new Date().getHours()}`, {
     values: { username: data.user?.username },

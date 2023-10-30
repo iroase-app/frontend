@@ -2,7 +2,7 @@
   // TODO: Redirect to the landing page if logo is clicked while not signed in
 </script>
 
-<a href="/app">
+<a href="/app" title="home">
   <svg
     class="ps-1 pt-2"
     width="138"
